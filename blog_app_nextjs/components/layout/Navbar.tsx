@@ -50,7 +50,7 @@ interface NavbarProps {
       title: string;
       url: string;
     };
-    signup: {
+    register: {
       title: string;
       url: string;
     };
@@ -82,7 +82,7 @@ const Navbar = ({
   ],
   auth = {
     login: { title: "Login", url: "/login" },
-    signup: { title: "Sign up", url: "/signup" },
+    register: { title: "Sign up", url: "/register" },
   },
   className,
 }: NavbarProps) => {
@@ -117,7 +117,7 @@ const Navbar = ({
               <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
             <Button asChild size="sm">
-              <Link href={auth.signup.url}>{auth.signup.title}</Link>
+              <Link href={auth.register.url}>{auth.register.title}</Link>
             </Button>
           </div>
         </nav>
@@ -165,7 +165,9 @@ const Navbar = ({
                       <Link href={auth.login.url}>{auth.login.title}</Link>
                     </Button>
                     <Button asChild>
-                      <Link href={auth.signup.url}>{auth.signup.title}</Link>
+                      <Link href={auth.register.url}>
+                        {auth.register.title}
+                      </Link>
                     </Button>
                   </div>
                 </div>

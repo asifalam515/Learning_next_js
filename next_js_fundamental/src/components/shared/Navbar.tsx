@@ -9,10 +9,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { CircleX, LayoutDashboard, LogOut, Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-import Image from "next/image";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -85,7 +86,13 @@ export default function Navbar() {
           <nav className="flex items-center gap-2">
             <div>
               <DropdownMenu>
-                <DropdownMenuTrigger></DropdownMenuTrigger>
+                <DropdownMenuTrigger>
+                  <Avatar>
+                    <AvatarFallback className="text-2xl font-bold bg-indigo-500 text-white cursor-pointer">
+                      X
+                    </AvatarFallback>
+                  </Avatar>
+                </DropdownMenuTrigger>
                 <DropdownMenuContent className="min-w-[200px]">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />

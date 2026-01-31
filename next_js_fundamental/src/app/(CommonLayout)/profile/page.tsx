@@ -3,18 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Calendar,
-  Edit,
-  Heart,
-  Home,
-  LogOut,
-  MapPin,
-  Package,
-  Plus,
-  Search,
-  Trash2,
-} from "lucide-react";
+import { Calendar, Edit, Home, Plus, Search, Trash2 } from "lucide-react";
 import { useState } from "react";
 export default function Page() {
   const [activeTab, setActiveTab] = useState("account");
@@ -153,14 +142,6 @@ export default function Page() {
     }
   };
 
-  const menuItems = [
-    { id: "account", icon: Home, label: "Account Information" },
-    { id: "orders", icon: Package, label: "Order Details" },
-    { id: "addresses", icon: MapPin, label: "Delivery Address" },
-    { id: "wishlist", icon: Heart, label: "Wishlist" },
-    { id: "logout", icon: LogOut, label: "Logout" },
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
@@ -170,10 +151,10 @@ export default function Page() {
             <Home className="w-4 h-4 mr-2" />
             <span>Homepage</span>
             <span className="mx-2">›</span>
-            <span className="text-gray-900 capitalize">
+            {/* <span className="text-gray-900 capitalize">
               {menuItems.find((item) => item.id === activeTab)?.label ||
                 "Account information"}
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
@@ -182,29 +163,6 @@ export default function Page() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm p-4">
-              <nav className="space-y-1">
-                {menuItems.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => setActiveTab(item.id)}
-                      className={`w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
-                        activeTab === item.id
-                          ? "bg-gray-100 text-gray-900"
-                          : "text-gray-600 hover:bg-gray-50"
-                      }`}
-                    >
-                      <Icon className="w-5 h-5 mr-3" />
-                      {item.label}
-                    </button>
-                  );
-                })}
-              </nav>
-            </div>
-          </div>
 
           {/* Main Content Area */}
           <div className="lg:col-span-3">

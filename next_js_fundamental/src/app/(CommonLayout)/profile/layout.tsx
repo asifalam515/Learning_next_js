@@ -6,7 +6,7 @@ const ProfileLayOut = ({ children }: { children: React.ReactNode }) => {
   const menuItems = [
     { id: "account", icon: Home, label: "Account Information" },
     { id: "orders", icon: Package, label: "Order Details" },
-    { id: "addresses", icon: MapPin, label: "Delivery Address" },
+    { id: "address", icon: MapPin, label: "Delivery Address" },
     { id: "wishlist", icon: Heart, label: "Wishlist" },
     { id: "logout", icon: LogOut, label: "Logout" },
   ];
